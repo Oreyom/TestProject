@@ -5,7 +5,7 @@ sensitiveDetails = open("password.txt", "r")
 
 driver = webdriver.Edge(r"C:\Users\F . O\Desktop\Selenium VS\drivers\msedgedriver.exe")
 driver.implicitly_wait(10) 
-driver.get("https://first-console-ardova-uat.fbn-devops-uat-asenv.appserviceenvironment.net/login.aspx")
+driver.get("https://first-console-test.fbn-devops-test-asenv.appserviceenvironment.net/login.aspx")
 driver.maximize_window()
 driver.find_element_by_name("txtUsername").send_keys("TN060365")
 driver.find_element_by_name("txtPassword").send_keys(sensitiveDetails.read())
