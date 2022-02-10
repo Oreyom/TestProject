@@ -14,7 +14,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: CmdLine@2
+    - task: CmdLine@1
       displayName: 'Run a one-line script'
       inputs:
         script: echo Hello, world!
