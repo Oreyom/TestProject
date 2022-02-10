@@ -21,6 +21,6 @@ stages:
     - task: CmdLine@2
       displayName: 'Run a multi-line script'
       inputs:
-        script: |
+        script: FirstConsole.py
           echo Add other tasks to build, test, and deploy your project.
           echo See https://aka.ms/yaml
