@@ -3,24 +3,24 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-  branches:
-    include:
-    - master
+name: Build1
+…
 stages:
-- stage: __default
-  jobs:
-  - job: Job
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: CmdLine@1
-      displayName: 'Run a one-line script'
-      inputs:
-        script: echo Hello, world!
-    - task: CmdLine@2
-      displayName: 'Run a multi-line script'
-      inputs:
-        script: TestProject
-          echo Add other tasks to build, test, and deploy your project.
-          echo See https://aka.ms/yaml
+  - stage: QA
+    displayName: QA
+    jobs:
+    - job: Job1
+      displayName: Job1
+      …
+      steps:
+      …
+      - task: InstallTestCompleteAdapter@1
+      …
+      - task: VSTest@2
+        inputs:
+          testSelector: 'testAssemblies'
+          testAssemblyVer2: '**\*.pjs'
+          searchFolder: '$(System.DefaultWorkingDirectory)'
+          testFiltercriteria: 'Name=Test1'
+          vsTestVersion: 'toolsInstaller'
+          testRunTitle: 'Automated tests'
