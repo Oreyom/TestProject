@@ -4,23 +4,17 @@
 # https://aka.ms/yaml
 
 name: Build1
+trigger:
+  - main
+resources:
+  repositories:
+    - repository: AutomatedTestsRepo
+      type : github
+      endpoint: connection
+      name: MyGitHubRepo/AutomatedTests
 …
-stages:
-  - stage: QA
-    displayName: QA
-    jobs:
-    - job: Job1
-      displayName: Job1
-      …
-      steps:
-      …
-      - task: InstallTestCompleteAdapter@1
-      …
-      - task: VSTest@2
-        inputs:
-          testSelector: 'testAssemblies'
-          testAssemblyVer2: '**\*.pjs'
-          searchFolder: '$(System.DefaultWorkingDirectory)'
-          testFiltercriteria: 'Name=Test1'
-          vsTestVersion: 'toolsInstaller'
-          testRunTitle: 'Automated tests'
+  steps:
+    - checkout: self
+    - checkout: AutomatedTestsRepo
+      path: AutomatedTests
+      clean: true
