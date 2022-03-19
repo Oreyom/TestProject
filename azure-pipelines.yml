@@ -14,4 +14,4 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-        script: echo Run Testonubuntu!
+      - script: echo Run Test on ubuntu!
