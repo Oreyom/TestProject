@@ -10,8 +10,8 @@ trigger:
 stages:
 - stage: Test
   jobs:
-  - job: Test on ubuntu
+  - job: ParallelTesting
     pool:
       vmImage: ubuntu-latest
-    steps:
+    #steps:
         #script: echo Run Test on ubuntu
