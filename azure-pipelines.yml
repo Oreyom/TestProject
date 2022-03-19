@@ -13,5 +13,5 @@ stages:
   - job: ParallelTesting
     pool:
       vmImage: ubuntu-latest
-    #steps:
-        #script: echo Run Test on ubuntu
+    steps:
+        script: echo Run Test on ubuntu
