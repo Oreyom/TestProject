@@ -4,10 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Run Test on ubuntu
+  branches:
+    include:
+    - master
+stages:
+- stage: Test
+  jobs:
+  - job: Test on ubuntu
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+        script: echo Run Test on ubuntu
